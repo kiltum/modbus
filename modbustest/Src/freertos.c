@@ -48,6 +48,7 @@
 
 /* USER CODE BEGIN Includes */     
 #include "gpio.h"
+#include "..\modbus\modbus.h"
 /* USER CODE END Includes */
 
 /* Variables -----------------------------------------------------------------*/
@@ -99,6 +100,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+  ModBus_Init();
   /* USER CODE END RTOS_QUEUES */
 }
 
@@ -113,7 +115,6 @@ void StartDefaultTask(void const * argument)
   for(;;)
   {
     osDelay(500);
-		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_8); 
   }
   /* USER CODE END StartDefaultTask */
 }
