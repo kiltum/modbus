@@ -19,7 +19,7 @@ for(int i=0;i<(*Len);i++)
 ...
 return (USBD_OK);
 ```
-* Handle outgoing bytes the same way, only from ModBusOutHandle
+* Handle outgoing bytes the same way, but from ModBusOutHandle queue
 ```
 uint8_t buf[256]; // buffer, where we collect output data
 uint8_t c = 0; // counter for buffer fill
@@ -40,7 +40,7 @@ if (evt.status == osEventTimeout)
   c=0;
   }
 ```
-* In other part code, call ModBus_GetRegister & ModBus_SetRegister
+* In other part code, call ModBus_GetRegister & ModBus_SetRegister for reading & setting register
 ```
 count = ModBus_GetRegister(0);
 ModBus_SetRegister(0,count+1); 
@@ -49,7 +49,7 @@ ModBus_SetRegister(0,count+1);
 
 I prefer to use ModPoll (http://www.modbusdriver.com/modpoll.html)
 
-So in my case all look like (register 0 & 1 overwritten inside programm for test)
+So in my case all look like this. Here register 0 & 1 overwritten inside programm for test, and modbus slave on COM5
 ```
 C:\Users\multi\Downloads\modpoll.3.4\win32>modpoll.exe -a 1 -r 1 -c 5  COM5 100 200 310 400 500
 modpoll 3.4 - FieldTalk(tm) Modbus(R) Master Simulator
@@ -89,3 +89,15 @@ Data type.............: 16-bit register, output (holding) register table
 [6]: 0
 -- Polling slave... (Ctrl-C to stop)
 ```
+
+## You are too lazy?
+
+In modbustest directory you find full working example.
+
+I use:
+
+- STM32F3-Discovery board
+- Keil uVision 5.22
+- STM32CubeMX
+
+#Have fun!#
