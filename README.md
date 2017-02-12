@@ -1,8 +1,15 @@
 # Simple MODBUS implementation for STM32 HAL & FreeRTOS
 
+Why I write my own implementation? 
+- It does not need any timers. 
+- It need only one thread on normal (or the same with interface) priority. 
+- It can be easy adopted for USB/usart/whatever interfaces.
+- It is for fun of course!
+
 # How to USE
 
 * Grab modbus.c and modbus.h to your project
+* Fix values in modbus.h for you. 
 * Call init functions and set slave address
 ```
 ModBus_Init();
