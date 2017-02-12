@@ -126,15 +126,26 @@ void StartDefaultTask(void const * argument)
       }
     if (evt.status == osEventTimeout)
       {
-        if( (c > 0) && (c < 256) ) // ok, something in buffer exist, lets send it
+        if( (c > 0) && (c < 254) ) // ok, something in buffer exist, lets send it
         {
           CDC_Transmit_FS(&buf[0], c); // by USB-CDC         
         }  
       c=0;
       }  
-    
+    if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET)
+    {
+      ModBus_SetRegister(1,1);
+      ModBus_SetRegister(0,0);
+    }
+    else
+    {
+      ModBus_SetRegister(1,0);
+    }
     // simple indicator "We alive"
     HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_8);
+    uint16_t count;
+    count = ModBus_GetRegister(0);
+    ModBus_SetRegister(0,count+1);  
   }
   /* USER CODE END StartDefaultTask */
 }

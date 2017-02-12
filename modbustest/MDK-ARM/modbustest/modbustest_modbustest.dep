@@ -550,7 +550,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x589DE7F6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x589DE7F6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x589DE7F6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x589DE7F6)
-I (../Src/..\modbus\modbus.h)(0x58A011AA)
+I (../Src/..\modbus\modbus.h)(0x58A05517)
 F (../Src/stm32f3xx_it.c)(0x589DE85D)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Drivers/CMSIS/Include --C99-ID:\modbustest\modbus\modbustest\MDK-ARM\RTE\_modbustest-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.4.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F303xC -DUSE_HAL_DRIVER -DSTM32F303xC-o modbustest\stm32f3xx_it.o --omf_browse modbustest\stm32f3xx_it.crf --depend modbustest\stm32f3xx_it.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x589DE7F2)
 I (../Inc/stm32f3xx_hal_conf.h)(0x589DE85D)
@@ -598,7 +598,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x589DE7F6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x589DE7F6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x589DE7F6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x589DE7F6)
-F (../Src/freertos.c)(0x58A04F0A)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Drivers/CMSIS/Include --C99-ID:\modbustest\modbus\modbustest\MDK-ARM\RTE\_modbustest-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.4.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F303xC -DUSE_HAL_DRIVER -DSTM32F303xC-o modbustest\freertos.o --omf_browse modbustest\freertos.crf --depend modbustest\freertos.d)
+F (../Src/freertos.c)(0x58A05BE5)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Drivers/CMSIS/Include --C99-ID:\modbustest\modbus\modbustest\MDK-ARM\RTE\_modbustest-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.4.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F303xC -DUSE_HAL_DRIVER -DSTM32F303xC-o modbustest\freertos.o --omf_browse modbustest\freertos.crf --depend modbustest\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x589DE7F6)
 I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F64D08)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F64D08)
@@ -654,8 +654,8 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F64D08)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F64D08)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x589DE7F5)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x589DE7F5)
-I (../Src/..\modbus\modbus.h)(0x58A011AA)
-F (../Src/main.c)(0x58A05005)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Drivers/CMSIS/Include --C99-ID:\modbustest\modbus\modbustest\MDK-ARM\RTE\_modbustest-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.4.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F303xC -DUSE_HAL_DRIVER -DSTM32F303xC-o modbustest\main.o --omf_browse modbustest\main.crf --depend modbustest\main.d)
+I (../Src/..\modbus\modbus.h)(0x58A05517)
+F (../Src/main.c)(0x58A0502C)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Drivers/CMSIS/Include --C99-ID:\modbustest\modbus\modbustest\MDK-ARM\RTE\_modbustest-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.4.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F303xC -DUSE_HAL_DRIVER -DSTM32F303xC-o modbustest\main.o --omf_browse modbustest\main.crf --depend modbustest\main.d)
 I (../Inc/main.h)(0x589DE85D)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x589DE7F2)
 I (../Inc/stm32f3xx_hal_conf.h)(0x589DE85D)
@@ -707,7 +707,7 @@ I (../Inc/usbd_conf.h)(0x589DE85C)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F64D08)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F64D08)
 I (../Inc/gpio.h)(0x589DE85B)
-I (../Src/..\modbus\modbus.h)(0x58A011AA)
+I (../Src/..\modbus\modbus.h)(0x58A05517)
 F (../Src/stm32f3xx_hal_msp.c)(0x589DE85D)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Drivers/CMSIS/Include --C99-ID:\modbustest\modbus\modbustest\MDK-ARM\RTE\_modbustest-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.4.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F303xC -DUSE_HAL_DRIVER -DSTM32F303xC-o modbustest\stm32f3xx_hal_msp.o --omf_browse modbustest\stm32f3xx_hal_msp.crf --depend modbustest\stm32f3xx_hal_msp.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x589DE7F2)
 I (../Inc/stm32f3xx_hal_conf.h)(0x589DE85D)
@@ -891,7 +891,7 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x589DE7F5)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x589DE7F5)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x589DE7F5)
 I (../Inc/usbd_desc.h)(0x589DE85D)
-F (..\modbus\modbus.c)(0x58A04FCB)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Drivers/CMSIS/Include --C99-ID:\modbustest\modbus\modbustest\MDK-ARM\RTE\_modbustest-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.4.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F303xC -DUSE_HAL_DRIVER -DSTM32F303xC-o modbustest\modbus.o --omf_browse modbustest\modbus.crf --depend modbustest\modbus.d)
+F (..\modbus\modbus.c)(0x58A06242)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Drivers/CMSIS/Include --C99-ID:\modbustest\modbus\modbustest\MDK-ARM\RTE\_modbustest-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.4.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F303xC -DUSE_HAL_DRIVER -DSTM32F303xC-o modbustest\modbus.o --omf_browse modbustest\modbus.crf --depend modbustest\modbus.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x589DE7F6)
 I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F64D08)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F64D08)
@@ -911,43 +911,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x589DE7F6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x589DE7F6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x589DE7F6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x589DE7F6)
-I (../Inc/gpio.h)(0x589DE85B)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x589DE7F2)
-I (../Inc/stm32f3xx_hal_conf.h)(0x589DE85D)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x589DE7F2)
-I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x589DE7D7)
-I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303xc.h)(0x589DE7D7)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x589DE7F1)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x589DE7F1)
-I (../Drivers/CMSIS/Include/core_cmSimd.h)(0x589DE7F1)
-I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h)(0x589DE7D7)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x589DE7F2)
-I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F64D08)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc_ex.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio_ex.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma_ex.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_cortex.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c_ex.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pcd.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pcd_ex.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr.h)(0x589DE7F2)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x589DE7F2)
-I (../Inc/usbd_cdc_if.h)(0x589DE85D)
-I (../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h)(0x589DE7F5)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x589DE7F5)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x589DE7F5)
-I (../Inc/usbd_conf.h)(0x589DE85C)
-I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F64D08)
-I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F64D08)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x589DE7F5)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x589DE7F5)
-I (..\modbus\modbus.h)(0x58A011AA)
+I (..\modbus\modbus.h)(0x58A05517)
 F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c)(0x589DE7F5)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Drivers/CMSIS/Include --C99-ID:\modbustest\modbus\modbustest\MDK-ARM\RTE\_modbustest-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.4.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F303xC -DUSE_HAL_DRIVER -DSTM32F303xC-o modbustest\usbd_ioreq.o --omf_browse modbustest\usbd_ioreq.crf --depend modbustest\usbd_ioreq.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x589DE7F5)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x589DE7F5)

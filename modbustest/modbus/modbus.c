@@ -1,12 +1,21 @@
+/**
+Modbus slave implementation for STM32 HAL under FreeRTOS.
+(c) 2017 Viacheslav Kaloshin, multik@multik.org
+Licensed under LGPL. 
+**/
+
 #include "FreeRTOS.h"
 #include "cmsis_os.h"
-#include "gpio.h"
-#include "usbd_cdc_if.h"
 #include "modbus.h"
+
+// If you want directly send to usb-cdc
+// #include "usbd_cdc_if.h"
 
 osMessageQId ModBusInHandle;
 osMessageQId ModBusOutHandle;
 osThreadId ModBusTaskHandle;
+
+uint16_t mb_reg[ModBusRegisters];
 
 // Here is actual modbus data stores
 uint8_t mb_buf_in[256];
@@ -46,9 +55,6 @@ void ModBusTask(void const * argument)
           mb_buf_in_count=0;
         }
       }
-
-    //osDelay(200);
-		//HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_8); 
   }
 }
 
@@ -61,9 +67,12 @@ void ModBus_Init(void)
   osThreadDef(ModBusTask, ModBusTask, osPriorityNormal, 0, 128);
   ModBusTaskHandle = osThreadCreate(osThread(ModBusTask), NULL);
   mb_buf_in_count=0;
-  mb_addr=247; // by default maximum possible
+  mb_addr=247; // by default maximum possible adrress
   mb_buf_out_count=0;
-
+  for(int i=0;i<ModBusRegisters;i++) 
+  {
+    mb_reg[i]=0;
+  }
 }
 
 void ModBus_SetAddress(uint8_t addr)
@@ -89,24 +98,98 @@ void ModBusParse(void)
     // check CRC
     if(CRC16_IN()==0)
     {
-    // Exception as we doe not provide this function
-      mb_buf_out[mb_buf_out_count++]=mb_addr;
-      mb_buf_out[mb_buf_out_count++]=mb_buf_in[1]+0x80;
-      mb_buf_out[mb_buf_out_count++]=1;
+      mb_buf_out_count = 0;
+      uint16_t st,nu;
+      uint8_t func = mb_buf_in[1];
+      uint8_t i;
+      switch(func)
+      {
+        case 3:
+          // read holding registers. by bytes addr func starth startl totalh totall
+          st=mb_buf_in[2]*256+mb_buf_in[3];
+          nu=mb_buf_in[4]*256+mb_buf_in[5];
+          if( (st+nu) > ModBusRegisters) // dont ask more, that we has!
+            {
+              mb_buf_out[mb_buf_out_count++]=mb_addr;
+              mb_buf_out[mb_buf_out_count++]=func+0x80;
+              mb_buf_out[mb_buf_out_count++]=2;
+            }
+            else
+            {
+              mb_buf_out[mb_buf_out_count++]=mb_addr;
+              mb_buf_out[mb_buf_out_count++]=func;
+              mb_buf_out[mb_buf_out_count++]=(st+nu)*2; // how many bytes we will send?
+              for(i=st;i<nu;i++)
+                {
+                  mb_buf_out[mb_buf_out_count++]=( mb_reg[i] >> 8 ) & 0xFF; // hi part
+                  mb_buf_out[mb_buf_out_count++]=mb_reg[i] & 0xFF; // lo part
+                }
+            }
+          break;
+        case 16: 
+          // write holding registers. by bytes addr func starth startl totalh totall num_bytes regh regl ...
+          st=mb_buf_in[2]*256+mb_buf_in[3];
+          nu=mb_buf_in[4]*256+mb_buf_in[5];
+          if( (st+nu) > ModBusRegisters) // dont ask more, that we has!
+            {
+              mb_buf_out[mb_buf_out_count++]=mb_addr;
+              mb_buf_out[mb_buf_out_count++]=func+0x80;
+              mb_buf_out[mb_buf_out_count++]=2;
+            }
+            else
+              { // ATTN : skip num_bytes
+              for(i=st;i<nu;i++)
+                {
+                  mb_reg[i]=mb_buf_in[7+i*2]*256+mb_buf_in[8+i*2];
+                }
+              mb_buf_out[mb_buf_out_count++]=mb_addr;
+              mb_buf_out[mb_buf_out_count++]=func;
+              mb_buf_out[mb_buf_out_count++]=mb_buf_in[2]; // how many registers ask, so many wrote
+              mb_buf_out[mb_buf_out_count++]=mb_buf_in[3];
+              mb_buf_out[mb_buf_out_count++]=mb_buf_in[4];
+              mb_buf_out[mb_buf_out_count++]=mb_buf_in[5];
+            }
+          break;
+        default:  
+          // Exception as we does not provide this function
+          mb_buf_out[mb_buf_out_count++]=mb_addr;
+          mb_buf_out[mb_buf_out_count++]=func+0x80;
+          mb_buf_out[mb_buf_out_count++]=1;
+          break;
+      }
       
       CRC16_OUT();
       
+     // If you want directly to USB-CDC 
      //CDC_Transmit_FS(&mb_buf_out[0], mb_buf_out_count);
      for(int i=0;i<mb_buf_out_count;i++)
         {
-          if(osMessagePut(ModBusOutHandle,mb_buf_out[i],0)!=osOK)
-           HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_11);
-        } 
+          osMessagePut(ModBusOutHandle,mb_buf_out[i],0);
+        }
     }
     // Ok, we parsed buffer, clean up
     mb_buf_in_count=0;
     mb_buf_out_count=0;
 }
+
+// set value of register
+void ModBus_SetRegister(uint8_t reg,uint16_t value)
+{
+  if(reg<ModBusRegisters)
+  {
+    mb_reg[reg]=value;
+  }
+}
+// grab value of register
+uint16_t ModBus_GetRegister(uint8_t reg)
+{
+  if(reg<ModBusRegisters)
+  {
+    return mb_reg[reg];
+  }
+  return 0;
+}
+
 
 // Calculate CRC for outcoming buffer
 // and place it to end.
