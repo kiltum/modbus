@@ -48,7 +48,9 @@
 
 /* USER CODE BEGIN Includes */     
 #include "gpio.h"
+#include "usbd_cdc_if.h"
 #include "..\modbus\modbus.h"
+
 /* USER CODE END Includes */
 
 /* Variables -----------------------------------------------------------------*/
@@ -100,7 +102,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
-  ModBus_Init();
+ 
   /* USER CODE END RTOS_QUEUES */
 }
 
@@ -112,9 +114,27 @@ void StartDefaultTask(void const * argument)
 
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
+  uint8_t buf[256]; // buffer, where we collect output data
+  uint8_t c = 0; // counter for buffer fill
+  
   for(;;)
   {
-    osDelay(500);
+    osEvent evt = osMessageGet(ModBusOutHandle,200); // wait here 200 tick
+    if (evt.status == osEventMessage)
+      {
+        buf[c++]=(uint8_t) evt.value.v;
+      }
+    if (evt.status == osEventTimeout)
+      {
+        if( (c > 0) && (c < 256) ) // ok, something in buffer exist, lets send it
+        {
+          CDC_Transmit_FS(&buf[0], c); // by USB-CDC         
+        }  
+      c=0;
+      }  
+    
+    // simple indicator "We alive"
+    HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_8);
   }
   /* USER CODE END StartDefaultTask */
 }

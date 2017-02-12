@@ -462,9 +462,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
-        <Group>
           <GroupName>Application/User</GroupName>
           <Files>
             <File>
@@ -511,6 +508,11 @@
               <FileName>usbd_desc.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/usbd_desc.c</FilePath>
+            </File>
+            <File>
+              <FileName>modbus.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\modbus\modbus.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -608,6 +610,9 @@
               <FilePath>startup_stm32f303xc.s</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>

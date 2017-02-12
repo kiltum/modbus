@@ -48,7 +48,7 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "..\modbus\modbus.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -91,7 +91,9 @@ int main(void)
   MX_GPIO_Init();
 
   /* USER CODE BEGIN 2 */
-
+  ModBus_Init();
+  ModBus_SetAddress(1);
+  
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

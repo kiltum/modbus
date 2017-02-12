@@ -24,6 +24,7 @@
 "modbustest\usbd_conf.o"
 "modbustest\usb_device.o"
 "modbustest\usbd_desc.o"
+"modbustest\modbus.o"
 "modbustest\usbd_ioreq.o"
 "modbustest\usbd_core.o"
 "modbustest\usbd_ctlreq.o"

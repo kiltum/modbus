@@ -44,6 +44,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc_if.h"
 /* USER CODE BEGIN INCLUDE */
+#include "FreeRTOS.h"
+#include "cmsis_os.h"
+#include "..\modbus\modbus.h"
 /* USER CODE END INCLUDE */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -263,7 +266,12 @@ static int8_t CDC_Receive_FS (uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 6 */
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
-	CDC_Transmit_FS(&Buf[0],* Len);
+	//CDC_Transmit_FS(&Buf[0],* Len); // for loop-back
+  for(int i=0;i<(*Len);i++)
+    {
+    osMessagePut(ModBusInHandle,Buf[i],0);
+    }
+  // HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_15);
   return (USBD_OK);
   /* USER CODE END 6 */ 
 }
