@@ -118,8 +118,8 @@ void ModBusParse(void)
             {
               mb_buf_out[mb_buf_out_count++]=mb_addr;
               mb_buf_out[mb_buf_out_count++]=func;
-              mb_buf_out[mb_buf_out_count++]=(st+nu)*2; // how many bytes we will send?
-              for(i=st;i<nu;i++)
+              mb_buf_out[mb_buf_out_count++]=nu*2; // how many bytes we will send?
+              for(i=st;i<(st+nu);i++)
                 {
                   mb_buf_out[mb_buf_out_count++]=( mb_reg[i] >> 8 ) & 0xFF; // hi part
                   mb_buf_out[mb_buf_out_count++]=mb_reg[i] & 0xFF; // lo part
@@ -138,9 +138,9 @@ void ModBusParse(void)
             }
             else
               { // ATTN : skip num_bytes
-              for(i=st;i<nu;i++)
+              for(i=0;i<nu;i++)
                 {
-                  mb_reg[i]=mb_buf_in[7+i*2]*256+mb_buf_in[8+i*2];
+                  mb_reg[st+i]=mb_buf_in[7+i*2]*256+mb_buf_in[8+i*2];
                 }
               mb_buf_out[mb_buf_out_count++]=mb_addr;
               mb_buf_out[mb_buf_out_count++]=func;
