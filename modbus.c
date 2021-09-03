@@ -34,7 +34,7 @@ void ModBusTask(void const * argument)
     // Frame end?
     if (evt.status == osEventTimeout)
       {
-        if(mb_buf_in_count > 0) // ok, something in buffer exist, lets parse it
+        if(mb_buf_in_count >  0) // ok, something in buffer exist, lets parse it
         {
           ModBusParse();
         }  
