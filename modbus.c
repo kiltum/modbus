@@ -30,7 +30,7 @@ void ModBusTask(void const * argument)
 {
   for(;;)
   {
-    osEvent evt = osMessageGet(ModBusInHandle,ModBus35);
+    osEvent evt = osMessageGet(ModBusInHandle, ModBus35);
     // Frame end?
     if (evt.status == osEventTimeout)
       {
