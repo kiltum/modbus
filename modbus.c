@@ -1,7 +1,7 @@
 /**
 Modbus slave implementation for STM32 HAL under FreeRTOS.
 (c) 2017 Viacheslav Kaloshin, multik@multik.org
-Licensed under LGPL. 
+Licensed under "any word you know"|no any restrictrions. 
 **/
 
 #include "FreeRTOS.h"
